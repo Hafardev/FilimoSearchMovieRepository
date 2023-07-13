@@ -13,14 +13,21 @@ import com.filimo.searchmovie.R
 import com.filimo.searchmovie.databinding.ItemRowSearchMovieAdapterBinding
 
 
-class SearchMovieAdapter(
-    private val itemResults: ArrayList<SearchMovie>,
-    private val context: Context
-) :
-    RecyclerView.Adapter<SearchMovieAdapter.CustomViewHolder>() {
+class SearchMovieAdapter(private val context: Context) : RecyclerView.Adapter<SearchMovieAdapter.CustomViewHolder>() {
 
     var mContext: Context = context
+    var itemResults : ArrayList<SearchMovie> = arrayListOf()
 
+    @SuppressLint("NotifyDataSetChanged")
+    fun setItems(itemResults: ArrayList<SearchMovie>) {
+        this.itemResults = itemResults
+        notifyDataSetChanged()
+    }
+   @SuppressLint("NotifyDataSetChanged")
+    fun clearData() {
+        this.itemResults.clear()
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val inflatedView =

@@ -47,42 +47,55 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        searchViweTextChangeHandler()
+
+        initRecyclerView()
+
+        mViewModel.searchMovieResultLiveData.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                binding.recyclerview.apply {
+                    mAdapter.setItems(it)
+                    binding.recyclerview.adapter = mAdapter
+                    Toast.makeText(
+                        requireContext(),
+                        "result-livedata ${it.size}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+        })
+
+
+        binding.buttonFirst.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        }
+    }
+
+    fun searchViweTextChangeHandler(){
+
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
-
-            @SuppressLint("NotifyDataSetChanged")
             override fun onQueryTextChange(newText: String?): Boolean {
-                if (newText.isNullOrEmpty()){
-                    mViewModel.searchMovieResultLiveData.postValue(null)
-                    binding.recyclerview?.adapter?.notifyDataSetChanged()
-                }else {
+                if (newText.isNullOrEmpty()) {
+                    mAdapter.clearData()
+                    binding.searchView.clearFocus()
+                    binding.recyclerview.visibility = View.GONE
+                } else {
+                    binding.recyclerview.visibility = View.VISIBLE
                     mViewModel.callGetSearchMovieResultRequest(newText)
                 }
                 return false
             }
         })
 
+    }
 
-        mViewModel.searchMovieResultLiveData.observe(viewLifecycleOwner, Observer {
-            it?.let {
-                mAdapter = SearchMovieAdapter(it as ArrayList<SearchMovie>, requireContext())
-                binding.recyclerview.apply {
-                    layoutManager = LinearLayoutManager(context)
-                    binding.recyclerview.setHasFixedSize(true)
-                    binding.recyclerview.adapter = mAdapter
-                }
-                Toast.makeText(requireContext(), "result-livedata ${it.size}", Toast.LENGTH_LONG)
-                    .show()
-            }
-        })
-
-
-
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
+    fun initRecyclerView() {
+        mAdapter = SearchMovieAdapter(requireContext())
+        binding.recyclerview.layoutManager = LinearLayoutManager(context)
+        binding.recyclerview.setHasFixedSize(true)
     }
 
     override fun onDestroyView() {

@@ -19,7 +19,8 @@ class SearchMovieViewModel @Inject constructor(
 
     lateinit var searchMovieResultFlow: Flow<SearchMovieListResult>
     var messageError = MutableLiveData<String>()
-    val searchMovieResultLiveData = MutableLiveData<List<SearchMovie>>()
+    var searchResultMessage = MutableLiveData<String>("جستجوی شما یافت نگردید")
+    val searchMovieResultLiveData = MutableLiveData<ArrayList<SearchMovie>>()
 
 
     fun callGetSearchMovieResultRequest(textChanged: String?) {
@@ -34,6 +35,7 @@ class SearchMovieViewModel @Inject constructor(
                 searchMovieResultFlow = flowOf( getSearchMovieSearchResultUseCase.onExecute(textChanged)) as Flow<SearchMovieListResult>
                 searchMovieResultFlow.catch { exception -> messageError.value = exception.message }
                 searchMovieResultFlow.collect {
+                    println("vm")
                     searchMovieResultLiveData.postValue(it.data)
                 }
             } catch (e: java.lang.IllegalStateException) {
