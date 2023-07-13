@@ -13,7 +13,7 @@ import javax.inject.Inject
 open class BaseViewModel @Inject constructor() : ViewModel() {
 
     fun launchCoroutine(
-        executorDispatcher: CoroutineDispatcher = Dispatchers.Default,
+        executorDispatcher: CoroutineDispatcher = Dispatchers.IO,
         action: suspend () -> Unit
     ) {
 
