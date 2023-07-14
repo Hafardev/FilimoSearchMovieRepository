@@ -23,13 +23,7 @@ class ApiResultParserInterceptor : Interceptor {
                     response.newBuilder().body(newBody).build()
                 } ?: response
             }catch (e: Exception){
-                println("resultBody1 ${e.message}")
-            }
-        }else {
-            try {
-
-            }catch (e: Exception){
-                println("resultBody ${e.message}")
+                println("resBodyException ${e.message}")
             }
         }
         return response

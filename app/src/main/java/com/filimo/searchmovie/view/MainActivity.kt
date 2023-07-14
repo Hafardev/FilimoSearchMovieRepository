@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "این برنامه متعلق به کمپانی فیلیمو و صبا ایده می باشد", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
     }

@@ -16,6 +16,7 @@ android {
         applicationId config.android.applicationId
         minSdk config.android.minSdkVersion
         targetSdk config.android.targetSdkVersion
+        multiDexEnabled config.android.multidexEnabled
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -48,6 +49,7 @@ dependencies {
 
     implementation project(path: ':domain')
     implementation project(path: ':data')
+    //implementation ("androidx.fragment:fragment-ktx:2.2.0")
 
     println("\r\n------ $project.name module dependecies ------")
     config.presentationDep.get().each {

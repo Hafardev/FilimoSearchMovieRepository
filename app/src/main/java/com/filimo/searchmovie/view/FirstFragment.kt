@@ -47,31 +47,23 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        searchViweTextChangeHandler()
+        searchViewTextChangeHandler()
 
         initRecyclerView()
 
+        /*Handle set item result to adapter and recyclerView*/
         mViewModel.searchMovieResultLiveData.observe(viewLifecycleOwner, Observer {
             it?.let {
                 binding.recyclerview.apply {
                     mAdapter.setItems(it)
                     binding.recyclerview.adapter = mAdapter
-                    Toast.makeText(
-                        requireContext(),
-                        "result-livedata ${it.size}",
-                        Toast.LENGTH_LONG
-                    ).show()
                 }
             }
         })
 
-
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
     }
 
-    fun searchViweTextChangeHandler(){
+    fun searchViewTextChangeHandler(){
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
