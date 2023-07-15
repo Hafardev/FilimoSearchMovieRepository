@@ -34,3 +34,7 @@ Implemented MVVM-Clean Architecture as Google's recommendation. Model-View-ViewM
 - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) : Stores and manages UI-related data and presentation logic in a lifeCycle-conscious way and survives configuration changes and isn't destroyed on UI changes.ViewModel objects are automatically retained during configuration changes so that survive data.
 - [Navigation](https://developer.android.com/guide/navigation/get-started) : Used to navigate between fragments
 - [Data Binding](https://developer.android.com/topic/libraries/data-binding) : Used to bind data in code to view in your XML layouts.
+
+
+## Screenshots
+![Screenshot](https://github.com/Hafardev/FilimoSearchMovieRepository/issues/1)
