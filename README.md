@@ -7,7 +7,7 @@
 * [Setup and Install](#setup_and_nstall)
 * [Architecture](#architecture)
 * [Technologies Used](#technologies-used)
-
+* [Screenshots](#Screenshots)
 
 ## Setup and Install
 - Get the source code by : git clone https://github.com/Hafardev/FilimoSearchMovieRepository.git
