@@ -37,4 +37,5 @@ Implemented MVVM-Clean Architecture as Google's recommendation. Model-View-ViewM
 
 
 ## Screenshots
-![Screenshot](https://github.com/Hafardev/FilimoSearchMovieRepository/issues/1)
+![Screenshot](https://user-images.githubusercontent.com/127316982/253751752-0d726040-fe8c-45f3-9b46-d611581ed83f.jpg)
+![Screenshot](https://user-images.githubusercontent.com/127316982/253751765-78e599ee-9f76-4048-8fa1-f4dcf2438762.jpg)
