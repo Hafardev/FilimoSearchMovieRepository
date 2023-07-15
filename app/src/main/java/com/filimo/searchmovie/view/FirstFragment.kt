@@ -19,6 +19,7 @@ import com.filimo.searchmovie.R
 import com.filimo.searchmovie.databinding.FragmentFirstBinding
 import com.filimo.searchmovie.view.adapter.SearchMovieAdapter
 import com.filimo.searchmovie.viewmodel.SearchMovieViewModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -51,13 +52,21 @@ class FirstFragment : Fragment() {
 
         initRecyclerView()
 
-        /*Handle set item result to adapter and recyclerView*/
+        /* Handle set item result to adapter and recyclerView */
         mViewModel.searchMovieResultLiveData.observe(viewLifecycleOwner, Observer {
             it?.let {
                 binding.recyclerview.apply {
                     mAdapter.setItems(it)
                     binding.recyclerview.adapter = mAdapter
                 }
+            }
+        })
+
+        /*Handle show message error*/
+        mViewModel.showMessageError.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                Snackbar.make(view, it, Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
             }
         })
 
