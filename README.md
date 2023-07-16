@@ -1,5 +1,5 @@
 # Filimo - SearchMovie
-- An example Search Movie Android App that help you to get Search movies list by input movie name's and displays them in a list .
+- An example Search Movie Android App that help you to get Search movie list by input movie name and display them in a list
 - This application is implemented using Filimo Search Api(https://www.filimo.com/api/en/v1/movie/movie/list/tagid/1000300/text/{Query}/sug/on) with clean architecture principles, MVVM design pattern,Hilt DI,Kotlin,Coroutines,Kotlin Flow,LiveData,Retrofit,OkHttp,Navigation,dataBinding,etc Libraries and Applying Clean Code using OOP ,SOLID Priciples,Helper Classes and Repository Pattern.
 
 
