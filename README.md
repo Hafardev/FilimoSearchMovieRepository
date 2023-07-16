@@ -11,7 +11,7 @@
 
 ## Setup and Install
 - Get the source code by : git clone https://github.com/Hafardev/FilimoSearchMovieRepository.git
-- Import and Build Project on Android Studio.
+- Import and Build Project on Android Studio (Electric Eel | 2022.1.1 && AGP version 7.4 && Minimum required Gradle version 7.5)
 - Supported Android Versions : Android 7-Nougat (API level 24) or higher
 
 
