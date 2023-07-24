@@ -1,6 +1,6 @@
-# Filimo - SearchMovie
+# SearchMovie
 - An example Search Movie Android App that help you to get Search movie list by input movie name and display them in a list
-- This application is implemented using Filimo Search Api(https://www.filimo.com/api/en/v1/movie/movie/list/tagid/1000300/text/{Query}/sug/on) with clean architecture principles, MVVM design pattern,Hilt DI,Kotlin,Coroutines,Kotlin Flow,LiveData,Retrofit,OkHttp,Navigation,dataBinding,etc Libraries and Applying Clean Code using OOP ,SOLID Priciples,Helper Classes and Repository Pattern.
+- This application is implemented using Search Api with clean architecture principles, MVVM design pattern,Hilt DI,Kotlin,Coroutines,Kotlin Flow,LiveData,Retrofit,OkHttp,Navigation,dataBinding,etc Libraries and Applying Clean Code using OOP ,SOLID Priciples,Helper Classes and Repository Pattern.
 
 
 ## Table of Contents
@@ -10,7 +10,7 @@
 * [Screenshots](#Screenshots)
 
 ## Setup and Install
-- Get the source code by : git clone https://github.com/Hafardev/FilimoSearchMovieRepository.git
+- Get the source code by : git clone https://github.com/Hafardev/SearchMovieRepository.git
 - Import and Build Project on Android Studio (Electric Eel |2022.1.1 && AGP version 7.4 && Mini required Gradle version 7.5)
 - Supported Android Versions : Android 7-Nougat (API level 24) or higher
 
